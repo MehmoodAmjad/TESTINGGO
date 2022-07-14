@@ -4,11 +4,11 @@ RUN mkdir /build
 WORKDIR /build
 
 RUN export GO111MODULE=on
-RUN go install main.go
-RUN cd /build && git clone https://github.com/MehmoodAmjad/buildapi.git
+RUN go install github.com/MehmoodAmjad/TESTINGGO@latest
+RUN cd /build && git clone https://github.com/MehmoodAmjad/TESTINGGO.git
 
-RUN cd /build/TESTINGGO/main && go build
+RUN cd /build/TESTINGGO && go build
 
 EXPOSE 4000
 
-ENTRYPOINT [ "/build/TESTINGGO/main/main" ]
+ENTRYPOINT [ "/build/TESTINGGO/main" ]
